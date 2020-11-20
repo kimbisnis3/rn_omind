@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import { ListItem, Avatar } from 'react-native-elements'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faCheckDouble } from '@fortawesome/free-solid-svg-icons'
+import { faCheckDouble, faUser, faComment, faGlobeAsia } from '@fortawesome/free-solid-svg-icons'
 import { FloatingAction } from "react-native-floating-action";
 
 const list = [
@@ -71,6 +71,25 @@ const styles = StyleSheet.create({
       color: "#e34556",
       fontWeight: "bold",
       alignSelf: "center",
+    },
+    gridH: {
+      flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'center',
+      paddingVertical : 10,
+      borderTopWidth : 0.5,
+      borderColor : 'grey',
+      paddingVertical : 20
+
+    },
+    itembottom : {
+      justifyContent: 'center', 
+      paddingHorizontal : 40
+    },
+    itembottomcenter : {
+      justifyContent: 'center', 
+      paddingHorizontal : 40,
+      marginBottom : 10
     }
 });
 
@@ -143,6 +162,12 @@ const Pills = () => {
     )
 }
 
+const Buttonsend = ({ onPress, title }) => (
+  <TouchableOpacity onPress={onPress} style={styles.appButtonContainer}>
+    <Text style={styles.appButtonText}> {title}</Text>
+  </TouchableOpacity>
+);
+
 const Pagetwo = () => {
     return (
         <View style={styles.container}>
@@ -157,6 +182,12 @@ const Pagetwo = () => {
                 }}
             />
             </View>
+            {/* <Buttonsend title="QR VOUCHER" /> */}
+            <View style={styles.gridH}>
+              <View style={styles.itembottom} ><FontAwesomeIcon icon={ faGlobeAsia } color="gray" size={26} /></View>
+              <View style={styles.itembottomcenter} ><FontAwesomeIcon icon={ faComment } color="#e95950" size={26} /></View>
+              <View style={styles.itembottom} ><FontAwesomeIcon icon={ faUser } color="gray" size={26} /></View>
+          </View>
         </View>
     );
 }
