@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
       paddingHorizontal: 10
     },
     appButtonText: {
-      fontSize: 14,
+      fontSize: 15,
       color: "#e34556",
       fontWeight: "bold",
       alignSelf: "center",
